@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<menu>
+		<kienpt_vendor translate="title" module="vendor">
+			<title>Manager Vendors</title>
+			<sort_order>75</sort_order>
+			<depends>
+				<module>Kienpt_Vendor</module>
+			</depends>
+			<children>
+				<vendor translate="title" module="vendor">
+					<title>Manage Vendor</title>
+					<sort_order>10</sort_order>
+					<action>vendormanageradmin/adminhtml_vendor</action>
+				</vendor>
+			</children>
+		</kienpt_vendor>
+	</menu>
+	<acl>
+		<resources>
+			<admin>
+				<children>
+					<vendor translate="title" module="kienpt_vendor">
+						<title>Manage Vendor</title>
+					</vendor>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+</config>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+	<helloworld_index_index>
+	    <reference name="head">
+	        <!-- <action method="addJs">
+	            <script>dev/jcobb-basic-jquery-slider/js/bjqs-1.3.min.js</script>
+	        </action> -->
+	        <action method="addItem">
+	            <type>skin_css</type>
+	            <file>css/bjqs.css</file>
+	        </action>
+	    </reference>
+	    <reference name="content">
+	        <!-- <block type="baseblock/page" name="banner" template="banner/bannerslider.phtml"/> -->
+	        <block type="bannermanager/banner" name="banner_slider" template="banner/bannerslider.phtml"/>
+	    </reference>
+	</helloworld_index_index>
+</layout>

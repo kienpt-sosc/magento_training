@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Kienpt_BaseBlock>
+            <version>0.1.0</version>
+        </Kienpt_BaseBlock>
+    </modules>
+
+    <frontend>
+        <routers>
+            <kienpt_baseblock>
+                <use>standard</use>
+                <args>
+                    <module>Kienpt_BaseBlock</module>
+                    <frontName>baseblock</frontName>
+                </args>
+            </kienpt_baseblock>
+        </routers>
+        <layout>
+            <updates>
+                <baseblock>
+                    <file>baseblock.xml</file>
+                </baseblock>
+            </updates>
+        </layout>
+    </frontend>
+
+    <global>
+        <blocks>
+            <baseblock>
+                <class>Kienpt_BaseBlock_Block</class>
+            </baseblock>
+        </blocks>
+        <helpers>
+            <baseblock>
+                <class>Kienpt_BaseBlock_Helper</class>
+            </baseblock>
+        </helpers>
+    </global>
+</config>

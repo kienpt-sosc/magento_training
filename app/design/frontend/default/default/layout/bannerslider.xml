@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <cms_index_index>
+        <reference name="head">
+            <action method="addJs">
+                <script>dev/jcobb-basic-jquery-slider/jquery-1.10.2.js</script>
+            </action>
+            <action method="addJs">
+                <script>dev/jcobb-basic-jquery-slider/js/bjqs-1.3.min.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <file>css/bjqs.css</file>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="bannermanager/banner" name="banner_slider"/>
+        </reference>
+    </cms_index_index>
+    <helloworld_index_index>
+        <reference name="head">
+            <action method="addJs">
+                <script>dev/jcobb-basic-jquery-slider/jquery-1.10.2.js</script>
+            </action>
+            <action method="addJs">
+                <script>dev/jcobb-basic-jquery-slider/js/bjqs-1.3.min.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <file>css/bjqs.css</file>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="bannermanager/banner" name="banner"/>
+        </reference>
+    </helloworld_index_index>
+</layout>

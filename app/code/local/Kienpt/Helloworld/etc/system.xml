@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<tabs>
+		<helloconfig translate="label" module="helloworld">
+			<label>Kientpt Hello World Config</label>
+			<sort_order>9999</sort_order>
+		</helloconfig>
+	</tabs>
+	<sections>
+		<kienpt_helloworld translate="label" module="helloworld">
+			<label>Hello World Config Options</label>
+			<tab>helloconfig</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>1000</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+                <messages translate="label">
+                    <label>Config Price and Percent</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+				        <fixed_price>
+				            <label>Fixed Price of Product</label>
+				            <backend_model>helloworld/validate</backend_model>
+				            <frontend_type>text</frontend_type>
+				            <sort_order>1</sort_order>
+				            <show_in_default>1</show_in_default>
+				            <show_in_website>1</show_in_website>
+				            <show_in_store>1</show_in_store>                    
+				        </fixed_price>
+				        <fixed_percent>
+				        	<label>Fixed Percent of Unit Price</label>
+				        	<backend_model>helloworld/validate</backend_model>
+				            <frontend_type>text</frontend_type>
+				            <sort_order>2</sort_order>
+				            <show_in_default>1</show_in_default>
+				            <show_in_website>1</show_in_website>
+				            <show_in_store>1</show_in_store>                    
+				        </fixed_percent>
+				    </fields>                
+                </messages>
+            </groups>
+		</kienpt_helloworld>
+	</sections>
+</config>

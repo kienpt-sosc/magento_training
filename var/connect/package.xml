@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>Kienpt_Vendor</name>
+    <version>0.1.1</version>
+    <stability>devel</stability>
+    <license>osl 3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Kienpt_Vendor</summary>
+    <description>Kienpt_Vendor</description>
+    <notes>Kienpt_Vendor</notes>
+    <authors><author><name>Kienpt</name><user>kienpt</user><email>kienpt@smartosc.com</email></author></authors>
+    <date>2014-06-11</date>
+    <time>10:17:47</time>
+    <contents><target name="magelocal"><dir name="Kienpt"><dir name="Vendor"><dir name="Block"><dir name="Adminhtml"><dir name="Catalog"><dir name="Product"><file name="Grid.php" hash="a9d29550e61119f18a67e413230b5b4c"/></dir></dir><dir name="Template"><dir name="Grid"><dir name="Renderer"><file name="Image.php" hash="07b4757800a1912cad93598e98756324"/><file name="Vendor.php" hash="fdd25f58c2d0889921e66b931f6d67f2"/></dir></dir></dir><dir name="Vendor"><dir name="Edit"><file name="Form.php" hash="bafe5f43c0ade5626548fdb90bbefd8b"/><dir name="Tab"><file name="Form.php" hash="214f8f62d84eb59c11e19ebbc24d8afd"/><file name="ListProduct.php" hash="1f955823358d6eee6a85b594638ab645"/></dir><file name="Tabs.php" hash="578e64d478515c667bacdd121827f99e"/></dir><file name="Edit.php" hash="bf8866732f071210702565d7c7c7799b"/><file name="Grid.php" hash="e1855a46583d2d8d5ed9a491a93e10e1"/></dir><file name="Vendor.php" hash="0173cd72ded3cd96f24686012a94d658"/></dir><file name="Form.php" hash="ab919461602aa35211b3e484cea8bd6c"/><dir name="Product"><file name="Form.php" hash="320a56336d97a318fd71db369b2f83ec"/><dir name="List"><file name="Vendor.php" hash="2ad464ff02ca2e68eb0fd5a54390f365"/></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="30eb0d214e81e7e5d736f8c222236069"/></dir><dir name="Model"><dir name="Resource"><dir name="Vendor"><file name="Collection.php" hash="243771b90d5c864f1036c03c343d4dab"/></dir><file name="Vendor.php" hash="ca2b445676e67d3843a3e67a42729a24"/></dir><dir name="Source"><file name="Vendor.php" hash="dab3b8fa63d59eefd95c9875adc58015"/></dir><file name="Vendor.php" hash="316ac6c1359ce2b14f18b5dac7fea4fe"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="VendorController.php" hash="904ea340ee7dc6ec99d24de454a9f559"/></dir><file name="IndexController.php" hash="1ff7ddad34d8efa3856914ab1e06570c"/><file name="ProductController.php" hash="fd751b16075d354b3b17c2bf95274031"/></dir><dir name="etc"><file name="adminhtml.xml" hash="1a3e6745f4a5cf7ee84adf3ac26d9361"/><file name="config.xml" hash="97632a499c6bdc674046eaf50e85055e"/></dir><dir name="sql"><dir name="vendor_setup"><file name="mysql4-install-0.1.0.php" hash="31b3187af4f0771f7fc781d18c028c14"/><file name="upgrade-0.1.0-0.1.1.php" hash="576fe11283000b7577c71282a350fb09"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Kienpt_Vendor.xml" hash="baa65be7c8929be2ca146ec57493449f"/></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="vendor.xml" hash="d5499e3f1bdf9f0231ca7aee88a92fe4"/></dir><dir name="template"><dir name="vendor"><file name="createproduct.phtml" hash="998554e72083a165421dd54b13e111b2"/><file name="form.phtml" hash="db2e636369debe06733711d3b8e58fb2"/><file name="list.phtml" hash="516b2e4ac9a1e88ef1c7b014dd9e4634"/><file name="list_product.phtml" hash="d29856830ff13e335c386579b53fe897"/><file name="main_action.phtml" hash="35b00d7ed741a743cbb3a1c3bfa2b688"/></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.3.1</min><max>6.0.0</max></php></required></dependencies>
+</package>

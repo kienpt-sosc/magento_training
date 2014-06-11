@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<layout>
+	<myblock_layout_handle>
+		<update handle="default"></update>
+		<reference name="header">
+			<remove name="top.search"></remove>
+		</reference>
+		<reference name="left">
+			<action method="unsetChild">
+				<name>left.permanent.callout</name>
+			</action>
+			<action method="unsetChild">
+				<name>left.newsletter</name>
+			</action>
+			
+		</reference>
+		<reference name="right">
+			<action method="unsetChild">
+				<name>catalog.compare.sidebar</name>
+			</action>
+			<action method="unsetChild">
+				<name>right.permanent.callout</name>
+			</action>
+			<action method="unsetChild">
+				<name>cart_sidebar</name>
+			</action>
+			<action method="unsetChild">
+				<name>right.reports.product.viewed</name>
+			</action>
+			<action method="unsetChild">
+				<name>right.poll</name>
+			</action>			
+		</reference>		
+	</myblock_layout_handle>
+
+	<block3_layout_handle>
+		<update handle="myblock_layout_handle"></update>
+		<reference name="left">
+			<block type="core/template"
+					 name="block_c"
+					 template="baseblock/block/block.phtml">
+				<action method="setBlockName">
+					<value>C</value>
+				</action>
+			</block>
+		</reference>
+
+		<reference name="content">
+			<block type="core/template"
+					 name="block_a"
+					 template="baseblock/block/block.phtml">
+				<action method="setBlockName">
+					<value>A</value>
+				</action>
+			</block>
+			<block type="core/template"
+					 name="block_b"
+					 template="baseblock/block/block.phtml">
+				<action method="setBlockName">
+					<value>B</value>
+				</action>
+			</block>
+		</reference>
+
+		<reference name="right">
+			<block type="core/template"
+					 name="block_d"
+					 template="baseblock/block/block.phtml">
+				<action method="setBlockName">
+					<value>D</value>
+				</action>
+			</block>
+		</reference>
+		
+	</block3_layout_handle>
+
+	<block4_layout_handle>
+		<update handle="block3_layout_handle"></update>
+		<reference name="root">
+			<action method="setTemplate">
+				<template>page/2columns-left.phtml</template>
+			</action>
+		</reference>
+
+		<reference name="block_a">
+			<action method="setBlockName">
+				<value>E</value>
+			</action>
+		</reference>
+
+		<reference name="left">
+			<block type="core/template"
+					 name="block_d"
+					 template="baseblock/block/block.phtml">
+				<action method="setBlockName">
+					<value>D</value>
+				</action>
+			</block>
+		</reference>		
+
+	</block4_layout_handle>
+</layout>

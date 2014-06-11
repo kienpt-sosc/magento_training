@@ -1,0 +1,5 @@
+<?php
+echo "Hello World!<br/>";
+$name = Mage::registry('name');
+if ($name != NULL)
+	echo "Hello {$name['name']}";

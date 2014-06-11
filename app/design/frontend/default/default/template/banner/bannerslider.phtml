@@ -1,0 +1,27 @@
+<script class="secret-source">
+    jQuery(document).ready(function($) {
+        $('#banner-fade').bjqs({
+            height      : 320,
+            width       : 620,
+            responsive  : true
+        });
+
+    });
+</script>
+<?php
+$user = Mage::registry('user');
+$banners = Mage::registry('banner');
+?>
+banner slider
+<div id="banner-fade">
+    <ul class="bjqs">        
+        <?php
+        foreach($banners as $banner)
+        {
+        ?>
+            <li><img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).$banner['url_image']; ?>" title="Automatically generated caption"></li>
+        <?php
+        }
+        ?>
+    </ul>
+</div>

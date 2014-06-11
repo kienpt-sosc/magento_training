@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+	<hello_index_index>
+		<reference name="content">
+			<block type="helloworld/helloworld" name="helloworld" template="hello/hello.phtml"/>
+		</reference>
+	</hello_index_index>
+</layout>

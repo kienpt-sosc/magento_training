@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+	<!-- <update handle="product.info"></update> -->
+	<reference name="product.info">
+		<action method="unsetChild">
+			<name>product.info.media</name>
+		</action>
+	</reference>
+	<!-- <catalog_product_view>
+
+	</catalog_product_view> -->
+</layout>

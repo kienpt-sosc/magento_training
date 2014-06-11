@@ -1,0 +1,50 @@
+<?php 
+	$vendor = Mage::registry('vendor');
+	// echo "<pre>";
+	// print_r($vendor);
+	$uri = "vendor/index/save";
+	if(isset($vendor['vendor_id']) && $vendor['vendor_id'] != NULL)
+		$uri .= "/id/{$vendor['vendor_id']}";
+?>
+<form name="my-custom-form" id="my-custom-form" action="<?php echo $this->getUrl().$uri?>" method="post">
+	<div class="fieldset">
+		<div class="fields">
+			<label class="required" for="vendorname"><?php echo $this->__('Vendor name') ?> <span class="required">*</span></label><br />
+   			<input id="vendorname" name="name" class="input-text required-entry" 
+   				value="<?php echo isset($vendor['name']) && $vendor['name'] != NULL ? $vendor['name'] : ''; ?>"
+   			/>
+		</div>
+		<div class="fields ">
+			<label for="vendoraddress"><?php echo $this->__('Address') ?> <span class="required">*</span></label><br />
+    		<input id="vendoraddress" name="address" class="input-text required-entry" value="<?php echo isset($vendor['address']) && $vendor['address'] != NULL ? $vendor['address'] : ''; ?>"
+    		/>
+		</div>
+    	<div>
+    		<label for="vendoremail"><?php echo $this->__('Email') ?> <span class="required">*</span></label><br />
+    		<input type="text" name="email" id="vendoremail" class="input-text required-entry validate-email" 
+    		value="<?php echo isset($vendor['email']) && $vendor['email'] != NULL ? $vendor['email'] : ''; ?>"/>
+    	</div>
+    	<div class="field">
+			<label for="vendorcontact"><?php echo $this->__('Contact') ?> <span class="required">*</span></label><br />
+    		<input id="vendorcontact" name="contact" class="input-text required-entry" 
+    		value="<?php echo isset($vendor['contact']) && $vendor['contact'] != NULL ? $vendor['contact'] : ''; ?>"/>
+		</div>
+		<div class="description">
+			<label for="vendordescription"><?php echo $this->__('Description') ?> <span class="required">*</span></label><br />
+    		<textarea id="vendordescription" name="description" class="required-entry" row="5" column="10">
+    			<?php echo isset($vendor['description']) && $vendor['description'] != NULL ? $vendor['description'] : ''; ?>
+    		</textarea>
+		</div>
+    </div>
+    <div class="buttons-set">
+        <p class="required">* <?php echo $this->__('Required Fields')?></p>
+        <p class="back-link"><a class="back-link" href="<?php echo $this->getBaseUrl().'vendor';?>"><small>&laquo;</small>Back</a></p>
+        <button class="button" title="Submit" type="submit"><span><span><?php echo $this->__('Submit')?></span></span></button>
+    </div>
+</form>
+<?php /* END OF my-custom-form */?>
+<script type="text/javascript">
+    //< ![CDATA[
+        var customForm = new VarienForm('my-custom-form',false);
+    //]]>
+</script>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Kienpt_Vendor>
+			<version>0.1.1</version>
+		</Kienpt_Vendor>
+	</modules>
+	<frontend>
+		<routers>
+			<kienpt_vendor>
+				<use>standard</use>
+				<args>
+					<module>Kienpt_Vendor</module>
+					<frontName>vendor</frontName>
+				</args>
+			</kienpt_vendor>
+		</routers>
+		<layout>
+			<updates>
+				<vendor>
+					<file>vendor.xml</file>
+				</vendor>
+			</updates>
+		</layout>
+	</frontend>
+
+    <admin>
+        <routers>
+            <vendormanageradmin>
+                <use>admin</use>
+                <args>
+                    <module>Kienpt_Vendor</module>
+                    <frontName>vendor_manager</frontName>
+                </args>
+            </vendormanageradmin>
+        </routers>
+    </admin>
+
+	<global>
+		<blocks>
+            <vendor>
+                <class>Kienpt_Vendor_Block</class>
+            </vendor>
+            <adminhtml>
+                <rewrite>
+                    <catalog_product_grid>Kienpt_Vendor_Block_Adminhtml_Catalog_Product_Grid</catalog_product_grid>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+
+        <helpers>
+            <vendor>
+                <class>Kienpt_Vendor_Helper</class>
+            </vendor>
+        </helpers>
+
+        <models>
+        	<vendors>
+        		<class>Kienpt_Vendor_Model</class>
+        		<resourceModel>vendors_resource</resourceModel>
+        	</vendors>
+        	<vendors_resource>
+        		<class>Kienpt_Vendor_Model_Resource</class>
+        		<entities>
+        			<vendor>
+        				<table>kienpt_vendor</table>
+        			</vendor>
+        		</entities>
+        	</vendors_resource>
+        </models>
+
+        <resources>
+        	<vendor_setup>
+        		<setup>
+        			<module>Kienpt_Vendor</module>
+        			<!-- <class>Kienpt_Vendor_Model_Resource_Setup</class> -->
+        		</setup>
+        		<!-- <connection>
+        			<use>core_setup</use>
+        		</connection> -->
+        	</vendor_setup>
+        </resources>
+	</global>
+</config>

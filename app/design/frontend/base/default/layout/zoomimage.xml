@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+	<catalog_category_view>
+		<reference name="head">
+			<action method="addJs">
+				<script>zoomimage/jquery-min.js</script>
+			</action>
+
+			<action method="addJs">
+				<script>zoomimage/easyzoom.js</script>
+			</action>
+
+			<action method="addJs">
+				<script>zoomimage/my-js.js</script>
+			</action>
+			
+			<!-- <action method="setTemplate">
+				<template>zoomimage/category_view.phtml</template>
+			</action> -->
+		</reference>
+		<reference name="content">
+			<block type="core/template" name="zoom-image" template="zoomimage/zoom-image.phtml">
+
+			</block>
+		</reference>
+	</catalog_category_view>
+	<catalog_product_view>
+		<reference name="product.info.media">
+			<!-- <remove name="product.info.media"></remove> -->
+			<!-- <action method="setTemplate">
+				<template>zoomimage/product_preview.phtml</template>
+			</action> -->
+			<action method="setBlockName">
+				<value>A</value>
+			</action>
+		</reference>
+		<reference name="right">
+			<action method="unsetChild">
+				<name>catalog.compare.sidebar</name>
+			</action>
+		</reference>
+	</catalog_product_view>
+</layout>

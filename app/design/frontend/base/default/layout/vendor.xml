@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+	<vendor_handle>
+		<update handle="default"></update>
+		<reference name="root">
+			<action method="setTemplate">
+				<template>page/1column.phtml</template>
+			</action>
+		</reference>
+	</vendor_handle>
+
+	<vendor_list_handle>
+		<update handle="vendor_handle"></update>
+		<reference name="content">			
+			<block type="vendor/form" name="list.vendor" template="vendor/list.phtml"/>
+		</reference>
+	</vendor_list_handle>
+	<vendor_edit_handle>
+		<update handle="vendor_handle"></update>
+		<reference name="content">			
+			<block type="vendor/form" name="list.vendor" template="vendor/form.phtml"/>
+		</reference>
+	</vendor_edit_handle>
+
+	<vendor_list_product_handle>
+		<update handle="vendor_handle"></update>
+		<reference name="content">			
+			<block type="core/template" name="main.action" template="vendor/main_action.phtml"/>
+			<block type="vendor/product_list_vendor" name="list.product.vendor" template="catalog/product/list.phtml"/>
+
+		</reference>
+	</vendor_list_product_handle>
+
+	<product_edit_handle>
+		<update handle="vendor_handle"></update>
+		<reference name="content">			
+			<block type="vendor/product_form" name="list.vendor" template="vendor/createproduct.phtml"/>
+		</reference>
+	</product_edit_handle>
+
+</layout>

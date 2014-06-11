@@ -1,0 +1,119 @@
+<?php
+    $product = Mage::registry('currentProduct');
+    if (isset($product) && !empty($product)) {
+        $uri = 'vendor/product/index/id/' . $product['vendor'];
+    } else {
+        $uri = 'vendor';
+    }
+?>
+
+<div class="page-title">
+    <h2><?php echo (isset($product) && $product != null) ? 'Edit' : 'Create'; ?> Product</h2>
+</div>
+<?php echo $this->getRequest()->getParam('vendorid'); ?>
+<form action="<?php echo $this->getUrl('vendor/product/save')."vendorid/".$this->getRequest()->getParam('vendorid'); ?>" method="post" id="form-create-product">
+    <div class="fieldset">
+        <ul class="form-list">
+            <li class="fields">
+                <div class="field">
+                    <label class="required"><em>*</em><?php echo $this->__('Name')?></label>
+                    <div class="input-box">
+                        <input type="text" class="input-text required-entry" maxlength="255" title="Name" value="<?php echo (isset($product['name']) && $product['name'] != null) ? $product['name'] : '' ?>" name="name" id="name">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="required"><em>*</em><?php echo $this->__('Price (USD)')?></label>
+                    <div class="input-box">
+                        <input type="text" class="required-number required-entry" maxlength="255" title="Price" value="<?php echo (isset($product['price']) && $product['price'] != null) ? $product['price'] : '' ?>" name="price" id="price">
+                    </div>
+                </div>
+            </li>
+
+            <li class="fields">
+                <div class="field">
+                    <label class="required"><em>*</em><?php echo $this->__('Description')?></label>
+                    <div class="input-box">
+                        <textarea class="input-text required-entry" title="Description" name="desc" id="desc" cols="30" rows="10"><?php echo (isset($product['description']) && $product['description'] != null) ? $product['description'] : '' ?></textarea>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="required"><em>*</em><?php echo $this->__('Short Description')?></label>
+                    <div class="input-box">
+                        <textarea class="input-text required-entry" title="Short Description" name="short-desc" id="short-desc" cols="30" rows="10"><?php echo (isset($product['short_description']) && $product['short_description'] != null) ? $product['short_description'] : '' ?></textarea>
+                    </div>
+                </div>
+            </li>
+
+            <li class="fields">
+                <div class="field">
+                    <label class="required"><em>*</em><?php echo $this->__('SKU')?></label>
+                    <div class="input-box">
+                        <input type="text" class="input-text required-entry" maxlength="255" title="SKU" value="<?php echo (isset($product['sku']) && $product['sku'] != null) ? $product['sku'] : '' ?>" name="sku" id="sku">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="required"><em>*</em><?php echo $this->__('Weight')?></label>
+                    <div class="input-box">
+                        <input type="text" class="required-number required-entry" maxlength="255" title="Weight" value="<?php echo (isset($product['weight']) && $product['weight'] != null) ? $product['weight'] : '' ?>" name="weight" id="weight">
+                    </div>
+                </div>
+            </li>
+
+            <li class="fields">
+                <div class="field">
+                    <label class="required"><em>*</em><?php echo $this->__('Status')?></label>
+                    <select name="status" id="status" class="required-entry validate-select">
+                        <option value="">--Please Select--</option>
+                        <option value="1">Enabled</option>
+                        <option value="2">Disabled</option>
+                    </select>
+
+                </div>
+                <div class="field">
+                    <label class="required"><em>*</em><?php echo $this->__('Visibility')?></label>
+                    <select name="visibility" id="visibility" class="required-entry validate-select">
+                        <option value="">-- Please Select --</option>
+                        <option value="1">Not Visible Individually</option>
+                        <option value="2">Catalog</option>
+                        <option value="3">Search</option>
+                        <option value="4">Catalog, Search</option>
+                    </select>
+                </div>
+            </li>
+
+            <li class="fields">              
+                <div class="field">
+                    <label class="required"><em>*</em><?php echo $this->__('Tax Class')?></label>
+                    <select name="tax" id="tax" class="required-entry validate-select">
+                        <option value="">--Please Select--</option>
+                        <option value="0">None</option>
+                        <option value="2">Taxable Goods</option>
+                        <option value="4">Shipping</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--Button & Link-->
+    <div class="buttons-set">
+        <p class="required">* <?php echo $this->__('Required Fields')?></p>
+        <p class="back-link"><a class="back-link" href="<?php echo $this->getBaseUrl().$uri;?>"><small>&laquo;</small>Back</a></p>
+        <button class="button" title="Submit" type="submit"><span><span><?php echo $this->__('Submit')?></span></span></button>
+    </div>
+</form>
+
+<script type="text/javascript">
+    //< ![CDATA[
+    var customForm = new VarienForm('form-create-product',false);
+    //]]>
+</script>
+<?php
+if (isset($product) && !empty($product)) { ?>
+<script type="text/javascript">
+    document.getElementById('status').value = <?php echo $product['status']; ?>;
+    document.getElementById('visibility').value = <?php echo $product['visibility']; ?>;
+    document.getElementById('vendor').value = <?php echo $product['vendor']; ?>;
+    document.getElementById('tax').value = <?php echo $product['tax_class_id']; ?>;
+</script>
+<?php }
+?>

@@ -1,0 +1,59 @@
+<html>
+<head>
+    <style type="text/css">
+        #wrapper{
+            width: 920px;
+            height: 800px;
+            /*border: 1px solid #000000;*/
+            margin: 0px auto;
+        }
+        #left_colum{
+            width: 200px;
+            /*height: 100%;*/
+            min-height: 400px;
+            border: 1px solid #000000;
+            margin-top: 5px;
+            margin-right: 5px;
+            float: left; 
+        }
+        #right_colum{
+            width: 200px;
+            /*height: 100%;*/
+            min-height: 400px;
+            margin-top: 5px;
+            margin-left: 5px;
+            border: 1px solid #000000;
+            float: left; 
+        }
+        #content{
+            width: 500px;
+            min-height: 400px;
+            margin-top: 5px;
+            margin-left: 4px;
+            border: 1px solid #000000;
+            float: left;
+        }
+        #wrapper-content{
+
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    Trang Page-1
+    <?php echo $this->getChildHtml('header');?>
+    <div id='wrapper-content'>
+        <div id='left_colum'>
+            <?php echo $this->getChildHtml('left_colum');?>
+        </div>
+        <div id='content'>
+            <?php echo $this->getChildHtml('content');?>
+        </div>
+        <div id='right_colum'>
+            <?php echo $this->getChildHtml('right_colum');?>
+        </div>
+    </div>
+    <?php echo $this->getChildHtml('footer');?>
+</div>
+</body>
+</html>

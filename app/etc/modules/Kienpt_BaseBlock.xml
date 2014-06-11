@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Kienpt_BaseBlock>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Kienpt_BaseBlock>
+    </modules>
+</config>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Kienpt_ImageZoom>
+			<version>0.1.0</version>
+		</Kienpt_ImageZoom>
+	</modules>
+	<frontend>
+		<layout>
+			<updates>
+				<zoomimage>
+					<file>zoomimage.xml</file>
+				</zoomimage>
+			</updates>
+		</layout>
+	</frontend>
+</config>

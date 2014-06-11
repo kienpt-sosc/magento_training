@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Kienpt_Helloworld>
+			<version>0.1.0</version>
+		</Kienpt_Helloworld>
+	</modules>
+		
+	<frontend>
+		<routers>
+			<helloworld>
+				<use>standard</use>
+				<args>
+					<module>Kienpt_Helloworld</module>
+					<frontName>helloworld</frontName>
+				</args>
+			</helloworld>
+		</routers>
+		<layout>
+            <updates>
+                <helloworld>
+                    <file>helloworld.xml</file>
+                </helloworld>
+            </updates>
+        </layout>
+
+	</frontend>
+
+	<adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <kienpt_helloworld>
+                                            <title>Store Hello World Module Section</title>
+                                        </kienpt_helloworld>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+	
+	<global>
+		<events>
+
+			<!-- <controller_front_send_response_before>
+                <observers>
+                    <kienpt_helloworld_model_price_observer>
+                        <class>Kienpt_Helloworld_Model_Price_Observer</class>
+                        <method>beforeLoadController</method>
+                    </kienpt_helloworld_model_price_observer>
+                </observers>
+            </controller_front_send_response_before> -->
+			<catalog_product_collection_load_after>
+				<observers>
+					<kienpt_helloworld_model_price_observer>
+						<class>Kienpt_Helloworld_Model_Price_Observer</class>
+						<method>updateAllPrice</method>
+					</kienpt_helloworld_model_price_observer>
+				</observers>
+			</catalog_product_collection_load_after>
+			
+			<catalog_product_load_after>
+				<observers>
+					<kienpt_helloworld_model_price_observer>
+						<class>Kienpt_Helloworld_Model_Price_Observer</class>
+						<method>updatePrice</method>
+					</kienpt_helloworld_model_price_observer>
+				</observers>
+			</catalog_product_load_after>
+
+			<checkout_cart_product_add_after>
+				<observers>
+					<kienpt_helloworld_model_price_observer>
+						<class>Kienpt_Helloworld_Model_Price_Observer</class>
+						<method>addProductCart</method>
+					</kienpt_helloworld_model_price_observer>
+				</observers>
+			</checkout_cart_product_add_after>
+
+		</events>
+
+		<models>
+			<helloworld>
+				<class>Kienpt_Helloworld_Model</class>
+			</helloworld>
+		</models>
+
+		<helpers>
+			<helloworld>
+				<class>Kienpt_Helloworld_Helper</class>
+			</helloworld>
+		</helpers>
+
+	</global>
+</config>

@@ -1,0 +1,27 @@
+<style type="text/css">
+    #page-header{
+        width: 918px;
+        height: 100px;
+        border: 1px solid black;
+        float: left;
+        text-align: center;
+        line-height: 100px
+    }
+    .header-container{
+        width: 200px;
+        height: 50px;
+        float: left;
+        margin: 10px;
+        border: 1px solid black;
+        padding: 10px;
+        background-color: black;
+    }
+</style>
+<div id="page-header">
+    <div class="header-container">
+        <div class="header">       
+            <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php //echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+        </div>
+    </div>
+    Header
+</div>
